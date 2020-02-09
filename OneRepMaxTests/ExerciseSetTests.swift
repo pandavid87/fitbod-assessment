@@ -1,5 +1,5 @@
 //
-//  OneRepMaxTests.swift
+//  ExerciseSetTests.swift
 //  OneRepMaxTests
 //
 //  Created by David Pan on 2/9/20.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import OneRepMax
 
-class OneRepMaxTests: XCTestCase {
+class ExerciseSetTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,16 +19,11 @@ class OneRepMaxTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testExerciseSet_comparableLessthan () {
+        let set1 = Exercise.Set(reps: 8, weight: 100)
+        let set2 = Exercise.Set(reps: 10, weight: 100)
+        XCTAssertTrue(set2 < set1)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
 
 }

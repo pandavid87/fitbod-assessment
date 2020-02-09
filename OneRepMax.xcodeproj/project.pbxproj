@@ -13,7 +13,17 @@
 		64AA9B2823F08DB100F24D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2623F08DB100F24D8D /* Main.storyboard */; };
 		64AA9B2A23F08DB400F24D8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2923F08DB400F24D8D /* Assets.xcassets */; };
 		64AA9B2D23F08DB400F24D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2B23F08DB400F24D8D /* LaunchScreen.storyboard */; };
-		64AA9B3823F08DB400F24D8D /* OneRepMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B3723F08DB400F24D8D /* OneRepMaxTests.swift */; };
+		64AA9B4423F08EAE00F24D8D /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B4323F08EAE00F24D8D /* workoutData.txt */; };
+		64AA9B4523F08EAE00F24D8D /* workoutData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B4323F08EAE00F24D8D /* workoutData.txt */; };
+		64AA9B4723F08ED300F24D8D /* WorkoutDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B4623F08ED300F24D8D /* WorkoutDataParser.swift */; };
+		64AA9B4A23F08F2300F24D8D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B4923F08F2300F24D8D /* Exercise.swift */; };
+		64AA9B4C23F09C9F00F24D8D /* WorkoutDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B4B23F09C9F00F24D8D /* WorkoutDataPoint.swift */; };
+		64AA9B4F23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B4E23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift */; };
+		64AA9B5123F0A40F00F24D8D /* WorkoutDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */; };
+		64AA9B5323F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */; };
+		64AA9B5523F0BF4400F24D8D /* ExerciseDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */; };
+		64AA9B5823F0C98800F24D8D /* OneRepMaxDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */; };
+		64AA9B5A23F0CCE900F24D8D /* ExerciseSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +46,18 @@
 		64AA9B2C23F08DB400F24D8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64AA9B2E23F08DB400F24D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64AA9B3323F08DB400F24D8D /* OneRepMaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneRepMaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64AA9B3723F08DB400F24D8D /* OneRepMaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxTests.swift; sourceTree = "<group>"; };
 		64AA9B3923F08DB400F24D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64AA9B4323F08EAE00F24D8D /* workoutData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workoutData.txt; sourceTree = "<group>"; };
+		64AA9B4623F08ED300F24D8D /* WorkoutDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataParser.swift; sourceTree = "<group>"; };
+		64AA9B4923F08F2300F24D8D /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		64AA9B4B23F09C9F00F24D8D /* WorkoutDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataPoint.swift; sourceTree = "<group>"; };
+		64AA9B4D23F09EE700F24D8D /* OneRepMaxTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneRepMaxTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		64AA9B4E23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataPointBuilderTests.swift; sourceTree = "<group>"; };
+		64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataParserTests.swift; sourceTree = "<group>"; };
+		64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxCalculatorTests.swift; sourceTree = "<group>"; };
+		64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataStoreTests.swift; sourceTree = "<group>"; };
+		64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDataStoreTests.swift; sourceTree = "<group>"; };
+		64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +99,7 @@
 		64AA9B1F23F08DB100F24D8D /* OneRepMax */ = {
 			isa = PBXGroup;
 			children = (
+				64AA9B4223F08E7200F24D8D /* Resources */,
 				64AA9B2023F08DB100F24D8D /* AppDelegate.swift */,
 				64AA9B2223F08DB100F24D8D /* SceneDelegate.swift */,
 				64AA9B2423F08DB100F24D8D /* ViewController.swift */,
@@ -86,6 +107,9 @@
 				64AA9B2923F08DB400F24D8D /* Assets.xcassets */,
 				64AA9B2B23F08DB400F24D8D /* LaunchScreen.storyboard */,
 				64AA9B2E23F08DB400F24D8D /* Info.plist */,
+				64AA9B4623F08ED300F24D8D /* WorkoutDataParser.swift */,
+				64AA9B4923F08F2300F24D8D /* Exercise.swift */,
+				64AA9B4B23F09C9F00F24D8D /* WorkoutDataPoint.swift */,
 			);
 			path = OneRepMax;
 			sourceTree = "<group>";
@@ -93,10 +117,24 @@
 		64AA9B3623F08DB400F24D8D /* OneRepMaxTests */ = {
 			isa = PBXGroup;
 			children = (
-				64AA9B3723F08DB400F24D8D /* OneRepMaxTests.swift */,
 				64AA9B3923F08DB400F24D8D /* Info.plist */,
+				64AA9B4E23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift */,
+				64AA9B4D23F09EE700F24D8D /* OneRepMaxTests-Bridging-Header.h */,
+				64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */,
+				64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */,
+				64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */,
+				64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */,
+				64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */,
 			);
 			path = OneRepMaxTests;
+			sourceTree = "<group>";
+		};
+		64AA9B4223F08E7200F24D8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64AA9B4323F08EAE00F24D8D /* workoutData.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +190,7 @@
 					};
 					64AA9B3223F08DB400F24D8D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 64AA9B1C23F08DB100F24D8D;
 					};
 				};
@@ -182,6 +221,7 @@
 			files = (
 				64AA9B2D23F08DB400F24D8D /* LaunchScreen.storyboard in Resources */,
 				64AA9B2A23F08DB400F24D8D /* Assets.xcassets in Resources */,
+				64AA9B4423F08EAE00F24D8D /* workoutData.txt in Resources */,
 				64AA9B2823F08DB100F24D8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AA9B4523F08EAE00F24D8D /* workoutData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AA9B4723F08ED300F24D8D /* WorkoutDataParser.swift in Sources */,
 				64AA9B2523F08DB100F24D8D /* ViewController.swift in Sources */,
+				64AA9B4C23F09C9F00F24D8D /* WorkoutDataPoint.swift in Sources */,
 				64AA9B2123F08DB100F24D8D /* AppDelegate.swift in Sources */,
+				64AA9B4A23F08F2300F24D8D /* Exercise.swift in Sources */,
 				64AA9B2323F08DB100F24D8D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AA9B3823F08DB400F24D8D /* OneRepMaxTests.swift in Sources */,
+				64AA9B5123F0A40F00F24D8D /* WorkoutDataParserTests.swift in Sources */,
+				64AA9B5523F0BF4400F24D8D /* ExerciseDataStoreTests.swift in Sources */,
+				64AA9B5323F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift in Sources */,
+				64AA9B4F23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift in Sources */,
+				64AA9B5A23F0CCE900F24D8D /* ExerciseSetTests.swift in Sources */,
+				64AA9B5823F0C98800F24D8D /* OneRepMaxDataStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +448,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3U7QZJD8L;
 				INFOPLIST_FILE = OneRepMaxTests/Info.plist;
@@ -410,6 +460,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pandavid87.OneRepMaxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OneRepMaxTests/OneRepMaxTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneRepMax.app/OneRepMax";
@@ -421,6 +473,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3U7QZJD8L;
 				INFOPLIST_FILE = OneRepMaxTests/Info.plist;
@@ -432,6 +485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pandavid87.OneRepMaxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OneRepMaxTests/OneRepMaxTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneRepMax.app/OneRepMax";
