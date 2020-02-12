@@ -8,14 +8,9 @@
 
 import XCTest
 @testable import OneRepMax
+import Combine
 
 class WorkoutDataParserTests: XCTestCase {
-
-    let dateFormatter:DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM dd yyyy"
-        return formatter
-    }()
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,11 +19,13 @@ class WorkoutDataParserTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    var subscriptions: [AnyCancellable] = []
     
     func testParsePath_invalidPath() {
         let path = "invalid path"
         let parser = WorkoutDataParser(dateFormatter: DateFormatter())
-        XCTAssertThrowsError(try parser.parseReource(path))
+        XCTAssertThrowsError( try parser.parseReource(path) )
+            
     }
     
     func testParsePath_noError() {
@@ -36,7 +33,8 @@ class WorkoutDataParserTests: XCTestCase {
             XCTFail("Could not create required path for test.")
             return
         }
-        let parser = WorkoutDataParser(dateFormatter: dateFormatter)
+        let parser = WorkoutDataParser(dateFormatter: DateFormatter.workoutDataDateFormatter)
         XCTAssertNoThrow(try parser.parseReource(path))
+        
     }
 }

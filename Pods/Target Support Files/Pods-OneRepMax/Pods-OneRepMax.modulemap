@@ -1,0 +1,6 @@
+framework module Pods_OneRepMax {
+  umbrella header "Pods-OneRepMax-umbrella.h"
+
+  export *
+  module * { export * }
+}

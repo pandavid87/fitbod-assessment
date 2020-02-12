@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Combine
 
 enum WorkoutDataParserError: Error {
     case invalidFormat
@@ -15,29 +15,35 @@ enum WorkoutDataParserError: Error {
 
 protocol DataParser {
     associatedtype ParsedData
-    func parseReource(_ path: String) throws -> [ParsedData]
+    func parseReource(_ path: String) throws -> ParsedData
 }
 
-class WorkoutDataParser: DataParser {
-    typealias ParsedData = WorkoutDataPoint
 
+class WorkoutDataParser: DataParser {
+    
+    typealias ParsedData = [WorkoutDataPoint]
+    typealias WorkoutDataParserResult = Result<ParsedData, Error>
+    
     enum DataIndices: Int, CaseIterable {
         case date, name, sets, reps, weight
     }
+    
     let dateFormatter: DateFormatter
     
     init(dateFormatter: DateFormatter) {
         self.dateFormatter = dateFormatter
     }
     
-    func parseReource(_ path: String) throws -> [WorkoutDataPoint] {
+    func parseReource(_ path: String) throws -> ParsedData {
+        
         let stringData = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
-        return try parseString(stringData)
+        let workoutData = try self.parseString(stringData)
+        return workoutData
     }
     
-    func parseString(_ data: String) throws -> [WorkoutDataPoint] {
+    private func parseString(_ data: String) throws -> [WorkoutDataPoint] {
         let lines = data.split(separator: "\n")
-        let parsed = try lines.map { (line) -> WorkoutDataPoint in
+        return try lines.map { (line) -> WorkoutDataPoint in
             
             let csvData = line.split(separator: ",").map({ String($0 )})
             
@@ -45,7 +51,7 @@ class WorkoutDataParser: DataParser {
                 throw WorkoutDataParserError.invalidFormat
             }
             
-            var builder = WorkoutDataPointBuilder(dateFormatter: dateFormatter)
+            var builder = WorkoutDataPointBuilder(dateFormatter: self.dateFormatter)
             
             for index in WorkoutDataParser.DataIndices.allCases {
                 let data = csvData[index.rawValue]
@@ -66,6 +72,13 @@ class WorkoutDataParser: DataParser {
             return try builder.build()
         }
         
-        return parsed
     }
+}
+
+extension DateFormatter {
+    static let workoutDataDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyyy"
+        return dateFormatter
+    }()
 }

@@ -8,9 +8,13 @@
 
 import XCTest
 @testable import OneRepMax
+import Combine
+
 
 class OneRepMaxDataStoreTests: XCTestCase {
 
+    var subscriptions: [AnyCancellable] = []
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -20,35 +24,22 @@ class OneRepMaxDataStoreTests: XCTestCase {
     }
 
     func testDataStore_empty() {
-        let expect = expectation(description: "OneRepMaxDataStore getOneRepMaxExercises")
-        let store = OneRepMaxDataStore(exercises: [])
-        
-        store.getOneRepMax { (data) in
-            XCTAssertTrue(data.isEmpty)
-            expect.fulfill()
-        }
-        waitForExpectations(timeout: 5, handler: nil)
-        
+        let data = try! OneRepMaxDataRequest.getOneRepMaxDataForExercises([])
+        XCTAssertTrue(data.isEmpty)
     }
     
     func testDataStore_getSingleExercise() {
-        let expect = expectation(description: "OneRepMaxDataStore getOneRepMaxExercises")
+        
         let sets = [
             Exercise.Set(reps: 5, weight: 100),
             Exercise.Set(reps: 6, weight: 100)
         ]
         let session = Exercise.Session(date: Date(), sets: sets)
         let exercise = Exercise(name: "Mock exercise", sessions: [session])
-        let store = OneRepMaxDataStore(exercises: [exercise])
-        
-        store.getOneRepMax { (data) in
-            print(data)
-            XCTAssertEqual(data.count, 1)
-            let oneRepMax = data[0]
-            XCTAssertEqual(oneRepMax.weight, 116)
-            expect.fulfill()
-        }
-        waitForExpectations(timeout: 5, handler: nil)
+        let data = try! OneRepMaxDataRequest.getOneRepMaxDataForExercises([exercise])
+        XCTAssertEqual(data.count, 1)
+        let oneRepMax = data[0]
+        XCTAssertEqual(oneRepMax.weight, 116)
     }
 
 }

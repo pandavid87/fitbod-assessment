@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64856A8323F48F7100A3E69C /* OneRepMaxDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5D23F11B9000F24D8D /* OneRepMaxDataRequest.swift */; };
+		64856A8523F4953A00A3E69C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64856A8423F4953A00A3E69C /* UIViewController+Extensions.swift */; };
+		64856A8723F4958000A3E69C /* OneRepMaxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64856A8623F4958000A3E69C /* OneRepMaxTableViewCell.swift */; };
+		64A7C6B223F4AB8800510E05 /* OneRepMaxDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A7C6B123F4AB8800510E05 /* OneRepMaxDetailRequest.swift */; };
+		64A7C6B423F4C40700510E05 /* OneRepMaxDetailsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A7C6B323F4C40700510E05 /* OneRepMaxDetailsDataController.swift */; };
 		64AA9B2123F08DB100F24D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B2023F08DB100F24D8D /* AppDelegate.swift */; };
 		64AA9B2323F08DB100F24D8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B2223F08DB100F24D8D /* SceneDelegate.swift */; };
-		64AA9B2523F08DB100F24D8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B2423F08DB100F24D8D /* ViewController.swift */; };
+		64AA9B2523F08DB100F24D8D /* OneRepMaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B2423F08DB100F24D8D /* OneRepMaxTableViewController.swift */; };
 		64AA9B2823F08DB100F24D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2623F08DB100F24D8D /* Main.storyboard */; };
 		64AA9B2A23F08DB400F24D8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2923F08DB400F24D8D /* Assets.xcassets */; };
 		64AA9B2D23F08DB400F24D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AA9B2B23F08DB400F24D8D /* LaunchScreen.storyboard */; };
@@ -21,9 +26,15 @@
 		64AA9B4F23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B4E23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift */; };
 		64AA9B5123F0A40F00F24D8D /* WorkoutDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */; };
 		64AA9B5323F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */; };
-		64AA9B5523F0BF4400F24D8D /* ExerciseDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */; };
+		64AA9B5523F0BF4400F24D8D /* ExerciseDataRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5423F0BF4400F24D8D /* ExerciseDataRequestTests.swift */; };
 		64AA9B5823F0C98800F24D8D /* OneRepMaxDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */; };
 		64AA9B5A23F0CCE900F24D8D /* ExerciseSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */; };
+		64AA9B5C23F11B6900F24D8D /* ExerciseDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5B23F11B6900F24D8D /* ExerciseDataRequest.swift */; };
+		64AA9B6023F128AF00F24D8D /* OneRepMaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B5F23F128AF00F24D8D /* OneRepMaxView.swift */; };
+		64AA9B6223F1305300F24D8D /* OneRepMaxDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA9B6123F1305300F24D8D /* OneRepMaxDataController.swift */; };
+		64D0FA2423F28638001CE18F /* OneRepMaxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0FA2323F28638001CE18F /* OneRepMaxDetailsViewController.swift */; };
+		A64EAFA155D8373A0367AB42 /* Pods_OneRepMaxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE71FB6BCCD4D608B81254CB /* Pods_OneRepMaxTests.framework */; };
+		F0BD1A2559777D1F4DF7906D /* Pods_OneRepMax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329B685207242996EC631883 /* Pods_OneRepMax.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AC2919CD794A5B9AB03C85B /* Pods-OneRepMaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneRepMaxTests.debug.xcconfig"; path = "Target Support Files/Pods-OneRepMaxTests/Pods-OneRepMaxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		329B685207242996EC631883 /* Pods_OneRepMax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneRepMax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4948CE9B8D5CCDE68DAB8600 /* Pods-OneRepMaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneRepMaxTests.release.xcconfig"; path = "Target Support Files/Pods-OneRepMaxTests/Pods-OneRepMaxTests.release.xcconfig"; sourceTree = "<group>"; };
+		64856A8423F4953A00A3E69C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		64856A8623F4958000A3E69C /* OneRepMaxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxTableViewCell.swift; sourceTree = "<group>"; };
+		64A7C6B123F4AB8800510E05 /* OneRepMaxDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDetailRequest.swift; sourceTree = "<group>"; };
+		64A7C6B323F4C40700510E05 /* OneRepMaxDetailsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDetailsDataController.swift; sourceTree = "<group>"; };
 		64AA9B1D23F08DB100F24D8D /* OneRepMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneRepMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AA9B2023F08DB100F24D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64AA9B2223F08DB100F24D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		64AA9B2423F08DB100F24D8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64AA9B2423F08DB100F24D8D /* OneRepMaxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxTableViewController.swift; sourceTree = "<group>"; };
 		64AA9B2723F08DB100F24D8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64AA9B2923F08DB400F24D8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64AA9B2C23F08DB400F24D8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,9 +73,17 @@
 		64AA9B4E23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataPointBuilderTests.swift; sourceTree = "<group>"; };
 		64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataParserTests.swift; sourceTree = "<group>"; };
 		64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxCalculatorTests.swift; sourceTree = "<group>"; };
-		64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataStoreTests.swift; sourceTree = "<group>"; };
+		64AA9B5423F0BF4400F24D8D /* ExerciseDataRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataRequestTests.swift; sourceTree = "<group>"; };
 		64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDataStoreTests.swift; sourceTree = "<group>"; };
 		64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSetTests.swift; sourceTree = "<group>"; };
+		64AA9B5B23F11B6900F24D8D /* ExerciseDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataRequest.swift; sourceTree = "<group>"; };
+		64AA9B5D23F11B9000F24D8D /* OneRepMaxDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDataRequest.swift; sourceTree = "<group>"; };
+		64AA9B5F23F128AF00F24D8D /* OneRepMaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxView.swift; sourceTree = "<group>"; };
+		64AA9B6123F1305300F24D8D /* OneRepMaxDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDataController.swift; sourceTree = "<group>"; };
+		64D0FA2323F28638001CE18F /* OneRepMaxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxDetailsViewController.swift; sourceTree = "<group>"; };
+		AC6FFFA37439C7A165B2E2AA /* Pods-OneRepMax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneRepMax.debug.xcconfig"; path = "Target Support Files/Pods-OneRepMax/Pods-OneRepMax.debug.xcconfig"; sourceTree = "<group>"; };
+		BF337746EE7BD5A0484ABD8D /* Pods-OneRepMax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneRepMax.release.xcconfig"; path = "Target Support Files/Pods-OneRepMax/Pods-OneRepMax.release.xcconfig"; sourceTree = "<group>"; };
+		CE71FB6BCCD4D608B81254CB /* Pods_OneRepMaxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneRepMaxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BD1A2559777D1F4DF7906D /* Pods_OneRepMax.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,18 +99,89 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64EAFA155D8373A0367AB42 /* Pods_OneRepMaxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59E2A52770C97CF9EC0AEC06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				329B685207242996EC631883 /* Pods_OneRepMax.framework */,
+				CE71FB6BCCD4D608B81254CB /* Pods_OneRepMaxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		608A26854798E5FE0ED7DB1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FFFA37439C7A165B2E2AA /* Pods-OneRepMax.debug.xcconfig */,
+				BF337746EE7BD5A0484ABD8D /* Pods-OneRepMax.release.xcconfig */,
+				0AC2919CD794A5B9AB03C85B /* Pods-OneRepMaxTests.debug.xcconfig */,
+				4948CE9B8D5CCDE68DAB8600 /* Pods-OneRepMaxTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		64856A8823F4A26C00A3E69C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				64D0FA2323F28638001CE18F /* OneRepMaxDetailsViewController.swift */,
+				64AA9B2423F08DB100F24D8D /* OneRepMaxTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		64856A8923F4A28400A3E69C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				64AA9B6123F1305300F24D8D /* OneRepMaxDataController.swift */,
+				64AA9B4623F08ED300F24D8D /* WorkoutDataParser.swift */,
+				64AA9B5B23F11B6900F24D8D /* ExerciseDataRequest.swift */,
+				64AA9B5D23F11B9000F24D8D /* OneRepMaxDataRequest.swift */,
+				64A7C6B123F4AB8800510E05 /* OneRepMaxDetailRequest.swift */,
+				64A7C6B323F4C40700510E05 /* OneRepMaxDetailsDataController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		64856A8A23F4A2D000A3E69C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64AA9B5F23F128AF00F24D8D /* OneRepMaxView.swift */,
+				64856A8623F4958000A3E69C /* OneRepMaxTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64856A8B23F4A2ED00A3E69C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64AA9B4B23F09C9F00F24D8D /* WorkoutDataPoint.swift */,
+				64AA9B4923F08F2300F24D8D /* Exercise.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		64856A8C23F4A32600A3E69C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64856A8423F4953A00A3E69C /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		64AA9B1423F08DB100F24D8D = {
 			isa = PBXGroup;
 			children = (
 				64AA9B1F23F08DB100F24D8D /* OneRepMax */,
 				64AA9B3623F08DB400F24D8D /* OneRepMaxTests */,
 				64AA9B1E23F08DB100F24D8D /* Products */,
+				608A26854798E5FE0ED7DB1E /* Pods */,
+				59E2A52770C97CF9EC0AEC06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,17 +197,18 @@
 		64AA9B1F23F08DB100F24D8D /* OneRepMax */ = {
 			isa = PBXGroup;
 			children = (
+				64856A8C23F4A32600A3E69C /* Extensions */,
+				64856A8B23F4A2ED00A3E69C /* Models */,
+				64856A8A23F4A2D000A3E69C /* Views */,
+				64856A8923F4A28400A3E69C /* Controllers */,
+				64856A8823F4A26C00A3E69C /* View Controllers */,
 				64AA9B4223F08E7200F24D8D /* Resources */,
 				64AA9B2023F08DB100F24D8D /* AppDelegate.swift */,
 				64AA9B2223F08DB100F24D8D /* SceneDelegate.swift */,
-				64AA9B2423F08DB100F24D8D /* ViewController.swift */,
 				64AA9B2623F08DB100F24D8D /* Main.storyboard */,
 				64AA9B2923F08DB400F24D8D /* Assets.xcassets */,
 				64AA9B2B23F08DB400F24D8D /* LaunchScreen.storyboard */,
 				64AA9B2E23F08DB400F24D8D /* Info.plist */,
-				64AA9B4623F08ED300F24D8D /* WorkoutDataParser.swift */,
-				64AA9B4923F08F2300F24D8D /* Exercise.swift */,
-				64AA9B4B23F09C9F00F24D8D /* WorkoutDataPoint.swift */,
 			);
 			path = OneRepMax;
 			sourceTree = "<group>";
@@ -122,7 +221,7 @@
 				64AA9B4D23F09EE700F24D8D /* OneRepMaxTests-Bridging-Header.h */,
 				64AA9B5023F0A40F00F24D8D /* WorkoutDataParserTests.swift */,
 				64AA9B5223F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift */,
-				64AA9B5423F0BF4400F24D8D /* ExerciseDataStoreTests.swift */,
+				64AA9B5423F0BF4400F24D8D /* ExerciseDataRequestTests.swift */,
 				64AA9B5723F0C98800F24D8D /* OneRepMaxDataStoreTests.swift */,
 				64AA9B5923F0CCE900F24D8D /* ExerciseSetTests.swift */,
 			);
@@ -144,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64AA9B3C23F08DB400F24D8D /* Build configuration list for PBXNativeTarget "OneRepMax" */;
 			buildPhases = (
+				B3CD797A6642B95B70631B8E /* [CP] Check Pods Manifest.lock */,
 				64AA9B1923F08DB100F24D8D /* Sources */,
 				64AA9B1A23F08DB100F24D8D /* Frameworks */,
 				64AA9B1B23F08DB100F24D8D /* Resources */,
+				3F1312A8D4EB1A0F29C1CD4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64AA9B3F23F08DB400F24D8D /* Build configuration list for PBXNativeTarget "OneRepMaxTests" */;
 			buildPhases = (
+				0AABDC899DE97BB426C50D86 /* [CP] Check Pods Manifest.lock */,
 				64AA9B2F23F08DB400F24D8D /* Sources */,
 				64AA9B3023F08DB400F24D8D /* Frameworks */,
 				64AA9B3123F08DB400F24D8D /* Resources */,
@@ -236,17 +338,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AABDC899DE97BB426C50D86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneRepMaxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F1312A8D4EB1A0F29C1CD4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneRepMax/Pods-OneRepMax-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneRepMax/Pods-OneRepMax-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneRepMax/Pods-OneRepMax-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3CD797A6642B95B70631B8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneRepMax-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64AA9B1923F08DB100F24D8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				64AA9B4723F08ED300F24D8D /* WorkoutDataParser.swift in Sources */,
-				64AA9B2523F08DB100F24D8D /* ViewController.swift in Sources */,
+				64AA9B6223F1305300F24D8D /* OneRepMaxDataController.swift in Sources */,
+				64856A8723F4958000A3E69C /* OneRepMaxTableViewCell.swift in Sources */,
+				64AA9B2523F08DB100F24D8D /* OneRepMaxTableViewController.swift in Sources */,
+				64A7C6B223F4AB8800510E05 /* OneRepMaxDetailRequest.swift in Sources */,
 				64AA9B4C23F09C9F00F24D8D /* WorkoutDataPoint.swift in Sources */,
+				64856A8523F4953A00A3E69C /* UIViewController+Extensions.swift in Sources */,
 				64AA9B2123F08DB100F24D8D /* AppDelegate.swift in Sources */,
+				64A7C6B423F4C40700510E05 /* OneRepMaxDetailsDataController.swift in Sources */,
 				64AA9B4A23F08F2300F24D8D /* Exercise.swift in Sources */,
+				64AA9B6023F128AF00F24D8D /* OneRepMaxView.swift in Sources */,
 				64AA9B2323F08DB100F24D8D /* SceneDelegate.swift in Sources */,
+				64856A8323F48F7100A3E69C /* OneRepMaxDataRequest.swift in Sources */,
+				64D0FA2423F28638001CE18F /* OneRepMaxDetailsViewController.swift in Sources */,
+				64AA9B5C23F11B6900F24D8D /* ExerciseDataRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64AA9B5123F0A40F00F24D8D /* WorkoutDataParserTests.swift in Sources */,
-				64AA9B5523F0BF4400F24D8D /* ExerciseDataStoreTests.swift in Sources */,
+				64AA9B5523F0BF4400F24D8D /* ExerciseDataRequestTests.swift in Sources */,
 				64AA9B5323F0B0CC00F24D8D /* OneRepMaxCalculatorTests.swift in Sources */,
 				64AA9B4F23F09EE700F24D8D /* WorkoutDataPointBuilderTests.swift in Sources */,
 				64AA9B5A23F0CCE900F24D8D /* ExerciseSetTests.swift in Sources */,
@@ -409,6 +584,7 @@
 		};
 		64AA9B3D23F08DB400F24D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC6FFFA37439C7A165B2E2AA /* Pods-OneRepMax.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,6 +603,7 @@
 		};
 		64AA9B3E23F08DB400F24D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF337746EE7BD5A0484ABD8D /* Pods-OneRepMax.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +622,7 @@
 		};
 		64AA9B4023F08DB400F24D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC2919CD794A5B9AB03C85B /* Pods-OneRepMaxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -470,6 +648,7 @@
 		};
 		64AA9B4123F08DB400F24D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4948CE9B8D5CCDE68DAB8600 /* Pods-OneRepMaxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
