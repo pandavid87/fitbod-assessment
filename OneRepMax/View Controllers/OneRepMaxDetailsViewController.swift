@@ -67,10 +67,10 @@ class OneRepMaxDetailsViewController: UIViewController {
         
         view.addSubview(lineChartView)
         let constraints = [
-            lineChartView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            lineChartView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-            lineChartView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            lineChartView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+            lineChartView.topAnchor.constraint(equalTo: view.readableContentGuide.topAnchor),
+            lineChartView.bottomAnchor.constraint(equalTo: view.readableContentGuide.bottomAnchor),
+            lineChartView.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+            lineChartView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
