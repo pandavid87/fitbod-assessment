@@ -36,8 +36,9 @@ class OneRepMaxTableViewController: UITableViewController {
         
         if let path = Bundle.main.path(forResource: "workoutData", ofType: "txt") {
             
+            loadingIndicator.startAnimating()
             let dataController = OneRepMaxDataController(resourcePath: path)
-            dataSubscription = dataController.oneRepMaxData
+            dataSubscription = dataController.loadData()
                 .sink(receiveCompletion: { [weak self] (completion) in
                     
                     DispatchQueue.main.async {
@@ -54,9 +55,6 @@ class OneRepMaxTableViewController: UITableViewController {
                         }
                           
                 })
-            
-            loadingIndicator.startAnimating()
-            dataController.loadData()
             
             
             self.dataController = dataController
@@ -82,7 +80,7 @@ class OneRepMaxTableViewController: UITableViewController {
 
 extension OneRepMaxTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataController?.oneRepMaxData.value.count ?? 0
+        return dataController?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OneRepMaxTableViewCell.reuseIdentifier, for: indexPath)

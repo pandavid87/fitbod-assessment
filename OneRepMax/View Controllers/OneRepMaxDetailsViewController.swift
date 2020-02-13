@@ -14,23 +14,6 @@ class OneRepMaxDetailsViewController: UIViewController {
     
     private var subscriptions: [AnyCancellable] = []
     
-    private lazy var  container: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.distribution = .fill
-        stack.alignment = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
-    private lazy var bestOneRepMaxLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.adjustsFontForContentSizeCategory = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var lineChartView: LineChartView = {
         let chart = LineChartView()
         chart.translatesAutoresizingMaskIntoConstraints = false
@@ -39,11 +22,20 @@ class OneRepMaxDetailsViewController: UIViewController {
         return chart
     }()
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let oneRepMax: OneRepMax
+    
     private lazy var dataController: OneRepMaxDetailsDataController = { [unowned self] in
         return OneRepMaxDetailsDataController(oneRepMax: self.oneRepMax)
-        
     }()
+    
     init(oneRepMax: OneRepMax) {
         self.oneRepMax = oneRepMax
         super.init(nibName: nil, bundle: nil)
@@ -58,9 +50,21 @@ class OneRepMaxDetailsViewController: UIViewController {
         self.title = oneRepMax.exercise.name
         view.backgroundColor = UIColor.white
         configureChartView()
-        configureDataController()
+        configureLoadingIndicator()
+        loadHistoricalData()
 
         
+    }
+    
+    private func configureLoadingIndicator() {
+        view.addSubview(loadingIndicator)
+        
+        let constraints = [
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
     }
     
     private func configureChartView() {
@@ -75,14 +79,16 @@ class OneRepMaxDetailsViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-    private func configureDataController() {
+    private func loadHistoricalData() {
+        loadingIndicator.startAnimating()
         dataController.loadHistoricalData()
             .sink(
                 receiveCompletion: ({ [weak self] completion in
-                    if case .failure(let error) = completion {
-                        DispatchQueue.main.async {
+                    DispatchQueue.main.async {
+                        if case .failure(let error) = completion {
                             self?.presentAlertForError(error)
                         }
+                        self?.loadingIndicator.stopAnimating()
                     }
                 }),
                 receiveValue: ({ [weak self] lineChartData in

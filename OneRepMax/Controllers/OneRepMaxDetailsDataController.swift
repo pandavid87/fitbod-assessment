@@ -12,7 +12,6 @@ import Charts
 
 final class OneRepMaxDetailsDataController {
 
-    private(set) var lineChartData: CurrentValueSubject<LineChartData, Error> = CurrentValueSubject(LineChartData())
     private var subscription: AnyCancellable?
     private let oneRepMax: OneRepMax
     
@@ -22,19 +21,23 @@ final class OneRepMaxDetailsDataController {
     
     @discardableResult
     func loadHistoricalData(queue: DispatchQueue = DispatchQueue.global()) -> AnyPublisher<LineChartData, Error> {
-        queue.async {
-            do {
-                let historicalData = try OneRepMaxDetailDataRequest.getHistoricalDataPointsFor(self.oneRepMax.exercise).reversed()
-                let chartEntries = historicalData.map({ ChartDataEntry(x: Double($0.date.timeIntervalSince1970), y: Double($0.weight)) })
-                let chartDataSet = LineChartDataSet(entries: chartEntries, label: "One Rep Max • lbs")
-                chartDataSet.valueFormatter = IntValueFormatter()
-                self.lineChartData.value  = LineChartData(dataSet: chartDataSet)
+        return Future<LineChartData, Error> { promise in
+            queue.async {
+                do {
+                    let historicalData = try OneRepMaxDetailDataRequest.getHistoricalDataPointsFor(self.oneRepMax.exercise).reversed()
+                    let chartEntries = historicalData.map({ ChartDataEntry(x: Double($0.date.timeIntervalSince1970), y: Double($0.weight)) })
+                    let chartDataSet = LineChartDataSet(entries: chartEntries, label: "One Rep Max • lbs")
+                    chartDataSet.valueFormatter = IntValueFormatter()
+                    let chartData = LineChartData(dataSet: chartDataSet)
+                    promise(.success(chartData))
+                }
+                catch (let error) {
+                    promise(.failure(error))
+                }
             }
-            catch (let error) {
-                self.lineChartData.send(completion: .failure(error))
-            }
-        }
-        return lineChartData.eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
+
+        
     }
 }
 

@@ -13,7 +13,7 @@ class OneRepMaxDataController {
     let resourcePath: String
     let dateFormatter: DateFormatter
     
-    private(set) var oneRepMaxData: CurrentValueSubject<[OneRepMax], Error> = CurrentValueSubject([])    
+    private(set) var oneRepMaxData: [OneRepMax] = []
     
     init(resourcePath: String, dateFormatter: DateFormatter = DateFormatter.workoutDataDateFormatter) {
         self.resourcePath = resourcePath
@@ -25,17 +25,16 @@ class OneRepMaxDataController {
     
     /// Number of exercises that have a One Rep Max
     var count: Int {
-        return oneRepMaxData.value.count
+        return oneRepMaxData.count
     }
-    
-    
+
     /// Getter for reading one rep max data
     /// - Parameter index: index of the target exercise
     func getData(atIndex index: Int) -> OneRepMax? {
         guard (0..<count).contains(index) else {
             return nil
         }
-        return oneRepMaxData.value[index]
+        return oneRepMaxData[index]
     }
     
     /// Loads the data from the resourcePath passed in during initialziation
@@ -43,7 +42,7 @@ class OneRepMaxDataController {
     /// - Parameter queue: queue to perform work asynchronously on, defaults ot DispatchQueue.global()
     @discardableResult
     func loadData(queue: DispatchQueue = DispatchQueue.global()) -> AnyPublisher<[OneRepMax], Error> {
-        queue.async {
+        let future = Future<[OneRepMax], Error> { promise in
             do {
                 let parser =  WorkoutDataParser(dateFormatter: self.dateFormatter)
                 self.dataLoadSubscription = try parser.parseReource(self.resourcePath)
@@ -51,14 +50,27 @@ class OneRepMaxDataController {
                     .collect()
                     .map(ExerciseDataRequest.getExercisesForDataPoints(_:))
                     .tryMap(OneRepMaxDataRequest.getOneRepMaxDataForExercises(_:))
-                    .sink(receiveCompletion: { self.oneRepMaxData.send(completion: $0)},
-                          receiveValue: ( { self.oneRepMaxData.value = $0 }))
+                    .sink(
+                        receiveCompletion: ({ completion in
+                            if case .failure(let error) = completion {
+                                promise(.failure(error))
+                            }
+                        }),
+                        receiveValue: ({ data in
+                            promise(.success(data))
+                        }))
             }
             catch (let error) {
-                self.oneRepMaxData.send(completion: .failure(error))
+                promise(.failure(error))
             }
         }
-        return oneRepMaxData.eraseToAnyPublisher()
+        
+        dataLoadSubscription = future
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { self.oneRepMaxData = $0})
+            
+        return future.eraseToAnyPublisher()
+        
     }
 }
     
