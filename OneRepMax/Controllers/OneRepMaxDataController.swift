@@ -10,9 +10,6 @@ import Foundation
 import Combine
 
 class OneRepMaxDataController {
-    
-    typealias OneRepMaxDataResult = Result<[OneRepMax], Error>
-    
     let resourcePath: String
     let dateFormatter: DateFormatter
     
@@ -23,7 +20,7 @@ class OneRepMaxDataController {
         self.dateFormatter = dateFormatter
     }
     
-    var subscription: AnyCancellable?
+    private var dataLoadSubscription: AnyCancellable?
     
     
     /// Number of exercises that have a One Rep Max
@@ -49,7 +46,7 @@ class OneRepMaxDataController {
         queue.async {
             do {
                 let parser =  WorkoutDataParser(dateFormatter: self.dateFormatter)
-                self.subscription = try parser.parseReource(self.resourcePath)
+                self.dataLoadSubscription = try parser.parseReource(self.resourcePath)
                     .publisher
                     .collect()
                     .map(ExerciseDataRequest.getExercisesForDataPoints(_:))
